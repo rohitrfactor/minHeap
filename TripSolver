@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class Solver {
+public class TripSolver {
 	
 	static ArrayList<Bus> buses = new ArrayList<>();
 	
@@ -14,7 +14,7 @@ public class Solver {
 	}
 }	
 
-class TripSolver{
+class Solver{
 	private ArrayList<Bus> buses = new ArrayList<>();
 	private int[][] timeMatrix;
 	private ArrayList<Trip> tripsArray;
