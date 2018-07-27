@@ -8,7 +8,8 @@ public class TripSolver {
 	
 	public static void main(String[] args) {
 		int[][] timeMatrix = {{0,1,4,3,1},{1,0,3,1,4},{4,3,0,1,2},{3,1,1,0,1},{1,4,2,0,2}};
-		int[][] tripsArray = {{1,2,3},{3,2,6},{3,4,8},{4,2,8},{2,4,14},{3,2,12}};
+		//int[][] tripsArray = {{1,2,3},{3,2,6},{3,4,8},{4,2,8},{2,4,14},{3,2,12}};
+		int[][] tripsArray = {{3,2,12},{1,2,16}};
 		Solver tripSolver = new Solver(timeMatrix,tripsArray);
 		tripSolver.eligibleBuses();
 	}
@@ -57,7 +58,7 @@ class Solver{
 		for(Trip trip : this.tripsArray) {
 			ArrayList<Bus> eligibleBuses = new ArrayList<>();
 			for(Bus bus : buses) {
-				if(bus.getNextAvailableTime()+this.timeMatrix[bus.getDestination()][trip.getSource()]<trip.getTripStartTime()) {
+				if((bus.getNextAvailableTime()+this.timeMatrix[bus.getDestination()][trip.getSource()])<=trip.getTripStartTime()) {
 					eligibleBuses.add(bus);
 				}
 			}
